@@ -1,0 +1,61 @@
+package org.example;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+
+public class Concurso {
+
+    private final String sede = "MUTXAMEL";
+    private LocalDate fecha;
+    private ArrayList<Equipo> listaEquipos;
+
+    public Concurso(){
+        listaEquipos = new ArrayList<>();
+    }
+
+    public LocalDate getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(LocalDate fecha) {
+        this.fecha = fecha;
+    }
+
+    public ArrayList<Equipo> getListaEquipos() {
+        return listaEquipos;
+    }
+
+    public void setListaEquipos(ArrayList<Equipo> listaEquipos) {
+        this.listaEquipos = listaEquipos;
+    }
+
+    public String getSede() {
+        return sede;
+    }
+
+    public void inscribirEquipo(Equipo equipo){
+        if (equipo != null) {
+            listaEquipos.add(equipo);
+            System.out.println("Nuevo equipo inscrito.");
+        } else {
+            System.out.println("ERROR. No se puede agregar un equipo nulo.");
+        }
+    }
+
+    public void equipoGanador(){
+
+    }
+
+    public void imprimirDatosEquipos(){
+        System.out.println();
+    }
+
+    @Override
+    public String toString() {
+        return "Concurso{" +
+                "sede='" + sede + '\'' +
+                ", fecha=" + fecha +
+                ", listaEquipos=" + listaEquipos +
+                '}';
+    }
+}
