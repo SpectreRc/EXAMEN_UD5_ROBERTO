@@ -1,0 +1,49 @@
+package org.example;
+
+import java.util.Scanner;
+
+public class AppProgramame {
+    public static void main (String[] args){
+        Scanner entrada = new Scanner(System.in);
+        System.out.println("¿Cuándo se realizará el evento?");
+        System.out.println("Día: ");
+        entrada.nextLine();
+        System.out.println("Mes: ");
+        entrada.nextLine();
+        System.out.println("Año: ");
+        entrada.nextLine();
+
+        Concurso iesmutxamel = new Concurso();
+        System.out.println(iesmutxamel);
+
+        Equipo maquinitas = new Equipo("Los maquinitas");
+        System.out.println(maquinitas);
+        iesmutxamel.inscribirEquipo(maquinitas);
+        maquinitas.insertarMiembros("Daniel","Lucas");
+        System.out.println("Insertados nuevos miembros para el equipo 'Los Maquinitas'");
+        maquinitas.insertarMiembros("Carla","Eros","Lucía");
+        System.out.println("No se pueden insertar más de 4 miembros.");
+        System.out.println(iesmutxamel);
+
+        Equipo triunfitos = new Equipo("Los triunfitos");
+        System.out.println(triunfitos);
+        iesmutxamel.inscribirEquipo(triunfitos);
+        triunfitos.insertarMiembros("Juan","Patri","Alexia");
+        System.out.println("Insertados nuevos miembros para el equipo 'Los Triunfitos'");
+        System.out.println(iesmutxamel);
+
+        maquinitas.setProblemasResueltos(2);
+        maquinitas.calcularPuntuacion(20);
+        triunfitos.setProblemasResueltos(3);
+        triunfitos.calcularPuntuacion(30);
+        System.out.println("Puntuación calculada para el equipo 'Los Maquinitas': ");
+        System.out.println("Puntuación calculada para el equipo 'Los Triunfitos': ");
+
+        //a)
+        iesmutxamel.imprimirDatosEquipos();
+
+        //b)
+        iesmutxamel.equipoGanador();
+    }
+
+}
